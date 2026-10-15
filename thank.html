@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#edf3e7">
+  <meta name="description" content="GathHeal के बारे में आपकी enquiry के लिए धन्यवाद।">
+  <title>धन्यवाद | GathHeal</title>
+  <style>
+    :root {
+      --ink: #173329;
+      --muted: #61746a;
+      --green: #1d6049;
+      --dark: #164b39;
+      --lime: #d9ed9d;
+      --cream: #f4f6ed;
+      --line: #e2e9df;
+    }
+    * { box-sizing: border-box; }
+    body {
+      width: 100%;
+      max-width: 450px;
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 22px 15px;
+      display: grid;
+      place-items: center;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse at 50% 0%, #e1edcd 0, transparent 48%),
+        var(--cream);
+      font-family: "Noto Sans Devanagari", "Nirmala UI", "Mangal", system-ui, sans-serif;
+      line-height: 1.65;
+      box-shadow: 0 0 55px rgba(27, 59, 45, .08);
+    }
+    .card {
+      width: 100%;
+      padding: 30px 24px 24px;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+      background: rgba(255,255,255,.96);
+      border: 1px solid rgba(226,233,223,.9);
+      border-radius: 28px;
+      box-shadow: 0 24px 65px rgba(27,59,45,.13);
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      height: 7px;
+      inset: 0 0 auto;
+      background: linear-gradient(90deg, var(--green), var(--lime), #88b98a);
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--dark);
+      font-weight: 900;
+      letter-spacing: -.035em;
+      font-size: 1.2rem;
+    }
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--lime);
+      font-size: 1.1rem;
+    }
+    .success-mark {
+      width: 68px;
+      height: 68px;
+      display: grid;
+      place-items: center;
+      margin: 24px auto 14px;
+      color: #fff;
+      background: linear-gradient(145deg, #55a276, var(--green));
+      border: 6px solid #e9f3e5;
+      border-radius: 50%;
+      box-shadow: 0 8px 18px rgba(29,96,73,.2);
+      font-size: 1.85rem;
+      animation: pop-in .55s cubic-bezier(.2,.8,.2,1) both;
+    }
+    .eyebrow {
+      display: inline-block;
+      color: var(--green);
+      background: #eef5e8;
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-size: .76rem;
+      font-weight: 800;
+    }
+    h1 {
+      margin: 12px 0 8px;
+      font-size: clamp(2rem, 9vw, 2.65rem);
+      line-height: 1.2;
+      letter-spacing: -.05em;
+    }
+    .message { margin: 0 auto; max-width: 350px; color: var(--muted); font-size: .94rem; }
+    .product {
+      width: min(100%, 225px);
+      height: 150px;
+      display: block;
+      margin: 19px auto 8px;
+      object-fit: cover;
+      object-position: center 48%;
+      border-radius: 18px;
+      background: #f2f0e8;
+      box-shadow: 0 10px 24px rgba(27,59,45,.11);
+    }
+    .timer-card {
+      margin: 20px 0 15px;
+      padding: 13px 15px 15px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #f8faf5;
+    }
+    .timer-copy { margin: 0; color: var(--muted); font-size: .84rem; }
+    .timer-copy strong { color: var(--green); }
+    .timer-number {
+      display: inline-grid;
+      width: 27px;
+      height: 27px;
+      place-items: center;
+      margin: 0 2px;
+      border-radius: 50%;
+      background: var(--green);
+      color: white;
+      font-variant-numeric: tabular-nums;
+      font-size: .78rem;
+    }
+    .timer-track {
+      height: 5px;
+      overflow: hidden;
+      margin-top: 12px;
+      border-radius: 99px;
+      background: #e4eadf;
+    }
+    .timer-progress {
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #65a572, var(--green));
+      transform-origin: left;
+      animation: countdown 5s linear forwards;
+    }
+    .button {
+      width: 100%;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      min-height: 50px;
+      padding: 12px 20px;
+      border: 0;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--green);
+      box-shadow: 0 10px 22px rgba(29,96,73,.2);
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform .2s, background .2s;
+    }
+    .button:hover { background: var(--dark); transform: translateY(-2px); }
+    .demo-note {
+      margin: 17px 0 0;
+      padding: 11px 13px;
+      border-radius: 12px;
+      color: #765a34;
+      background: #fff7e9;
+      text-align: left;
+      font-size: .74rem;
+    }
+    .medical-note { margin: 13px 0 0; color: var(--muted); font-size: .75rem; }
+    @keyframes countdown { to { transform: scaleX(0); } }
+    @keyframes pop-in {
+      from { opacity: 0; transform: scale(.65); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <a class="brand" href="index.html" aria-label="GathHeal home"><span class="brand-mark" aria-hidden="true">✦</span> GathHeal</a>
+    <div class="success-mark" aria-hidden="true">✓</div>
+    <span class="eyebrow">आपकी enquiry दर्ज हुई</span>
+    <h1>धन्यवाद!</h1>
+    <p class="message">GathHeal में रुचि दिखाने के लिए धन्यवाद। अपनी wellness journey के लिए सही medical guidance के साथ आगे बढ़ें।</p>
+    <img class="product" src="images/gathheal-product.jpeg" alt="GathHeal capsules की product bottle">
+
+    <div class="timer-card" aria-live="polite">
+      <p class="timer-copy"><strong><span id="countdown" class="timer-number">5</span> सेकंड</strong> में आप वापस GathHeal page पर पहुंच जाएंगे।</p>
+      <div class="timer-track" aria-hidden="true"><div class="timer-progress"></div></div>
+    </div>
+
+    <a class="button" href="index.html">अभी वापस जाएं <span aria-hidden="true">→</span></a>
+
+   
+
+  <script>
+    let secondsLeft = 5;
+    const countdown = document.getElementById("countdown");
+    const redirectTimer = window.setInterval(function () {
+      secondsLeft -= 1;
+      countdown.textContent = secondsLeft;
+
+      if (secondsLeft <= 0) {
+        window.clearInterval(redirectTimer);
+        window.location.replace("index.html");
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

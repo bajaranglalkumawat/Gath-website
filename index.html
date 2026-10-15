@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#24553c">
+  <meta name="description" content="GathHeal Capsules के बारे में जानकारी लें। किसी भी गांठ के लिए healthcare professional से medical evaluation अवश्य करवाएं।">
+  <title>GathHeal Capsules | Ayurvedic Wellness Support</title>
+
+  <style>
+    :root {
+      --ink: #19392a;
+      --muted: #607262;
+      --green: #38734d;
+      --green-dark: #183e2c;
+      --lime: #e7edc8;
+      --cream: #f5f3e7;
+      --white: #fffdf6;
+      --line: #dfe5d6;
+      --orange: #bd823b;
+      --shadow: 0 20px 55px rgba(30, 65, 43, .12);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      width: 100%;
+      max-width: 450px;
+      min-height: 100vh;
+      margin: 0 auto;
+      container-type: inline-size;
+      color: var(--ink);
+      background: var(--white);
+      font-family: "Noto Sans Devanagari", "Nirmala UI", "Mangal", system-ui, sans-serif;
+      line-height: 1.65;
+      box-shadow: 0 0 55px rgba(27, 59, 45, .08);
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    img { max-width: 100%; }
+    .container { width: min(100% - 30px, 420px); margin-inline: auto; }
+    .topbar { background: var(--green-dark); color: white; text-align: center; padding: 8px 16px; font-size: .84rem; }
+    .nav-wrap { background: rgba(255,255,255,.93); border-bottom: 1px solid var(--line); }
+    .nav { min-height: 74px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 850; font-size: 1.25rem; letter-spacing: -.04em; }
+    .brand-name { color: var(--green-dark); font-weight: 850; font-size: 1.25rem; letter-spacing: -.04em; }
+    .brand-mark { width: 37px; height: 37px; display: grid; place-items: center; color: var(--green-dark); background: var(--lime); border-radius: 13px; font-size: 1.3rem; }
+    .nav-links { display: flex; gap: 26px; align-items: center; color: var(--muted); font-size: .92rem; }
+    .nav-links a:hover { color: var(--green); }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border: 0; border-radius: 999px; padding: 14px 24px; color: #fff; background: var(--green); font-weight: 750; cursor: pointer; transition: transform .25s ease, background .25s ease, box-shadow .25s ease; box-shadow: 0 10px 22px rgba(29,96,73,.18); }
+    .button:hover { background: var(--green-dark); transform: translateY(-2px); }
+    .button span[aria-hidden="true"] { transition: transform .25s ease; }
+    .button:hover span[aria-hidden="true"] { transform: translateX(4px); }
+    .button-small { padding: 10px 19px; font-size: .9rem; }
+    .hero { overflow: hidden; position: relative; background: var(--cream); padding: 0 0 24px; }
+    .hero::before { display: none; }
+    .hero > .container { width: 100%; }
+    .hero-banner { overflow: hidden; margin: 0; border: 0; border-radius: 0; background: var(--white); box-shadow: none; }
+    .hero-banner img { display: block; width: 100%; height: auto; }
+    .hero-action { position: relative; display: grid; justify-items: center; gap: 10px; margin: 20px auto 0; text-align: center; }
+    .hero-action .button { min-width: 220px; }
+    .hero-medical-note { max-width: 360px; margin: 4px auto 0; color: var(--muted); font-size: .78rem; text-align: center; }
+    .hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; gap: 52px; position: relative; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--green); background: #eaf2df; border-radius: 999px; padding: 7px 13px; font-size: .82rem; font-weight: 750; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 680px; margin: 20px 0 16px; font-size: clamp(2.4rem, 5.2vw, 4.7rem); line-height: 1.17; letter-spacing: -.055em; }
+    h1 span { color: var(--green); }
+    .hero-copy { color: var(--muted); font-size: 1.12rem; max-width: 620px; }
+    .hero-warning { font-size: .88rem; margin: 17px 0 0; color: #a8191f; }
+    .check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 18px; margin: 26px 0 30px; }
+    .check-item { color: var(--ink); font-size: .95rem; }
+    .check { color: var(--green); font-weight: 900; margin-right: 7px; }
+    .hero-art { min-height: 440px; display: grid; place-items: center; position: relative; }
+    .art-orbit { width: min(390px, 92%); aspect-ratio: 1; border-radius: 50%; background: #e9efda; display: grid; place-items: center; position: relative; }
+    .art-orbit::before, .art-orbit::after { content: ""; position: absolute; border: 1px solid rgba(29,96,73,.14); border-radius: 50%; inset: 24px; }
+    .art-orbit::after { inset: 48px; }
+    .product-card { z-index: 1; width: 220px; min-height: 315px; background: linear-gradient(145deg, #fff 0%, #f4f3e9 100%); border: 1px solid #e0e4d7; border-radius: 20px 20px 30px 30px; box-shadow: 0 28px 50px rgba(31,68,49,.2); padding: 24px 19px; text-align: center; transform: rotate(-4deg); }
+    .product-leaf { color: var(--green); font-size: 2.1rem; line-height: 1; }
+    .product-name { display: block; color: var(--green-dark); font-size: 1.65rem; font-weight: 900; letter-spacing: -.06em; margin-top: 24px; }
+    .product-rule { height: 2px; width: 52px; background: var(--orange); margin: 14px auto; }
+    .product-sub { color: var(--muted); font-size: .76rem; line-height: 1.55; }
+    .product-herbs { display: inline-block; background: #eaf2df; color: var(--green-dark); padding: 7px 10px; border-radius: 7px; font-size: .7rem; font-weight: 700; margin-top: 16px; }
+    .product-photo { z-index: 1; display: block; width: 88%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 24px; box-shadow: 0 20px 40px rgba(31,68,49,.18); animation: product-float 5s ease-in-out infinite; }
+    .hero-photo-wrap { width: 100%; height: 300px; overflow: hidden; position: relative; border: 6px solid #fff; border-radius: 26px; background: #e8e4db; box-shadow: 0 22px 45px rgba(31,68,49,.2); }
+    .hero-photo { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 48% 34%; }
+    .hero-photo-wrap::after { content: ""; position: absolute; inset: 38% 0 0; background: linear-gradient(transparent, rgba(17,42,30,.48)); pointer-events: none; }
+    .hero-photo-label { position: absolute; z-index: 1; left: 13px; bottom: 13px; max-width: 205px; color: #fff; font-size: .72rem; font-weight: 700; line-height: 1.4; text-shadow: 0 1px 4px rgba(0,0,0,.3); }
+    .hero-product-badge { position: absolute; z-index: 2; right: 10px; bottom: 11px; width: 93px; height: 93px; padding: 4px; border: 2px solid #fff; border-radius: 20px; background: #fff; box-shadow: 0 8px 20px rgba(0,0,0,.2); }
+    .hero-product-badge img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 14px; }
+    .floating-note { position: absolute; z-index: 2; background: white; box-shadow: var(--shadow); border: 1px solid var(--line); border-radius: 14px; padding: 12px 16px; font-size: .83rem; font-weight: 700; }
+    .note-one { top: 62px; right: 4px; } .note-two { bottom: 45px; left: 0; }
+    .trust-row { display: flex; gap: 22px; flex-wrap: wrap; margin-top: 30px; color: var(--muted); font-size: .82rem; }
+    .trust-row span { display: inline-flex; gap: 7px; align-items: center; }
+    .section { padding: 40px 0; }
+    .section-soft { background: var(--cream); }
+    .section-head { max-width: 720px; margin: 0 auto 24px; text-align: center; }
+    .section-head h2 { font-size: clamp(1.8rem, 3.2vw, 2.8rem); line-height: 1.25; letter-spacing: -.04em; margin: 10px 0; }
+    .section-head p { color: var(--muted); margin-bottom: 0; }
+    .symptoms { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .symptom { padding: 19px; border: 1px solid var(--line); border-radius: 16px; background: white; font-weight: 650; font-size: .94rem; }
+    .symptom-icon { display: block; font-size: 1.4rem; margin-bottom: 8px; }
+    .problem-visuals { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-bottom: 14px; }
+    .problem-visual { min-width: 0; margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 15px; background: #fff; text-align: center; }
+    .problem-visual img { display: block; width: 100%; aspect-ratio: 1.72; object-fit: cover; }
+    .problem-visual figcaption { min-height: 42px; display: grid; place-items: center; padding: 7px 5px; color: var(--green-dark); font-size: .8rem; font-weight: 750; line-height: 1.35; }
+    .notice { background: #fff6e9; border: 1px solid #f2ddbd; color: #6f522e; border-radius: 16px; padding: 17px 20px; margin-top: 16px; font-size: .92rem; }
+    .section-visual { display: grid; grid-template-columns: 1fr; gap: 13px; margin: 16px 0; padding: 13px; border: 1px solid var(--line); border-radius: 18px; background: #fff; }
+    .section-visual img { display: block; width: 100%; height: 190px; border-radius: 13px; object-fit: cover; background: #edf3e3; }
+    .section-visual strong { display: block; margin-bottom: 4px; font-size: .91rem; }
+    .section-visual p { margin: 0; color: var(--muted); font-size: .79rem; line-height: 1.5; }
+    .section-visual--dark { border-color: rgba(255,255,255,.15); background: rgba(255,255,255,.08); }
+    .section-visual--dark p { color: #d4e4d9; }
+    .section-visual--dark strong { color: #fff; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+    .two-col h2 { font-size: clamp(1.9rem, 3.5vw, 3rem); line-height: 1.25; letter-spacing: -.045em; margin: 14px 0; }
+    .two-col p { color: var(--muted); }
+    .benefit-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0 28px; }
+    .benefit { background: #f5f8f1; border-radius: 12px; padding: 13px; font-size: .9rem; font-weight: 650; }
+    .ingredients { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .ingredient { min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 19px; background: #fff; text-align: left; transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease; }
+    .ingredient:hover { transform: translateY(-5px); border-color: #cadbc8; box-shadow: 0 15px 28px rgba(27,59,45,.1); }
+    .ingredient-art { height: 114px; overflow: hidden; background: #edf3e3; }
+    .ingredient-art img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .ingredient:hover .ingredient-art img { transform: scale(1.07); }
+    .ingredient-art .plant-crop { width: 190%; max-width: none; object-position: left center; }
+    .ingredient-copy { padding: 13px 12px 15px; }
+    .ingredient h3 { margin: 0 0 5px; font-size: .98rem; }
+    .ingredient p { color: var(--muted); font-size: .74rem; line-height: 1.45; margin: 0; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; counter-reset: step; }
+    .step { border: 1px solid var(--line); border-radius: 18px; padding: 22px; background: #fff; counter-increment: step; }
+    .step::before { content: "0" counter(step); display: block; color: var(--green); font-weight: 900; font-size: 1.4rem; margin-bottom: 10px; }
+    .step p { color: var(--muted); font-size: .9rem; margin: 6px 0 0; }
+    .support-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .support-item { padding: 20px; border-radius: 18px; background: #fff; border: 1px solid var(--line); }
+    .support-item strong { display: block; margin: 8px 0 4px; }
+    .support-item p { color: var(--muted); font-size: .86rem; margin: 0; }
+    .support-photo { display: block; width: 100%; height: 92px; object-fit: cover; border-radius: 12px; margin-bottom: 12px; }
+    #wellness-support .support-item:last-child { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(120px, .8fr) 1fr; grid-template-rows: auto 1fr; align-items: center; column-gap: 16px; }
+    #wellness-support .support-item:last-child .support-photo { grid-column: 1; grid-row: 1 / span 2; height: 120px; margin: 0; }
+    #wellness-support .support-item:last-child strong { grid-column: 2; align-self: end; }
+    #wellness-support .support-item:last-child p { grid-column: 2; align-self: start; }
+    .offer { background: var(--green-dark); color: white; border-radius: 28px; padding: 42px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
+    .offer-image { display: block; width: 100%; max-width: 125px; height: 140px; margin: 0 auto; border: 3px solid rgba(255,255,255,.8); border-radius: 18px; object-fit: cover; background: #eaf2df; }
+    .offer h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin: 8px 0; line-height: 1.25; }
+    .offer p { color: #d2e0d7; margin: 0; }
+    .offer .button { background: var(--lime); color: var(--green-dark); box-shadow: none; }
+    .offer .button:hover { background: #e8f7ba; }
+    .offer-tag { color: var(--lime); font-weight: 800; font-size: .85rem; }
+    .form-section { background: #f5f7ef; }
+    .order-card { max-width: 760px; display: grid; grid-template-columns: .85fr 1.15fr; margin: 0 auto; background: #fff; border: 1px solid var(--line); border-radius: 26px; overflow: hidden; box-shadow: var(--shadow); }
+    .order-aside { padding: 34px; color: #fff; background: var(--green); }
+    .order-aside h3 { font-size: 1.5rem; line-height: 1.3; }
+    .order-aside p { color: #d4e4d9; font-size: .9rem; }
+    .order-image { display: block; width: min(100%, 210px); margin: 16px auto; border-radius: 15px; }
+    .order-aside ul { list-style: none; padding: 0; margin: 22px 0 0; font-size: .9rem; }
+    .order-aside li { margin: 9px 0; }
+    .order-form { padding: 34px; }
+    .order-form h3 { font-size: 1.35rem; margin-bottom: 5px; }
+    .order-form > p { color: var(--muted); font-size: .88rem; }
+    .field { margin: 18px 0; }
+    .field label { display: block; font-weight: 700; font-size: .9rem; margin-bottom: 7px; }
+    .field input { width: 100%; border: 1px solid #dce3d8; border-radius: 11px; padding: 13px 14px; outline: none; }
+    .field input:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(29,96,73,.1); }
+    .order-form .button { width: 100%; }
+    .form-small { text-align: center; color: var(--muted); font-size: .75rem; margin: 12px 0 0 !important; }
+    .faq { max-width: 850px; margin: auto; }
+    details { border-bottom: 1px solid var(--line); padding: 18px 2px; }
+    summary { cursor: pointer; font-weight: 750; list-style: none; display: flex; justify-content: space-between; gap: 20px; }
+    summary::after { content: "+"; color: var(--green); font-size: 1.3rem; line-height: 1; }
+    details[open] summary::after { content: "−"; }
+    details p { color: var(--muted); margin: 12px 28px 0 0; font-size: .93rem; }
+    .disclaimer { background: #faf8ef; border: 1px solid #eeeade; padding: 38px 0 14px; color: #a5a397; font-size: .7rem; }
+    .disclaimer-inner { display: block; text-align: center; }
+    .disclaimer h2 { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    .disclaimer-inner p { margin: 0 auto; max-width: 760px; line-height: 1.55; }
+    .disclaimer strong { color: inherit; font-weight: 400; }
+    .policy-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 7px 12px; margin-top: 20px; font-size: .62rem; }
+    .policy-links a { color: #7e8978; font-weight: 500; text-decoration: none; cursor: pointer; }
+    .policy-links a:hover, .policy-links a:focus-visible { color: #455b45; text-decoration: underline; text-underline-offset: 3px; }
+    .policy-detail { margin: 12px auto 0; max-width: 520px; padding: 10px 12px; border: 1px solid #e6e2d4; border-radius: 6px; background: rgba(255,255,255,.55); color: #77766e; text-align: left; }
+    .policy-detail h3 { margin: 0 0 5px; color: #596b55; font-size: .82rem; }
+    .policy-detail p { margin: 0; line-height: 1.55; }
+    footer { background: #172b25; color: #d8e2da; padding: 26px 0; font-size: .82rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; align-items: center; }
+    .mobile-cta { display: none; }
+    .floating-note { animation: note-float 4.5s ease-in-out infinite; }
+    .note-two { animation-delay: -2s; }
+    .symptom, .support-item, .step { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+    .symptom:hover, .support-item:hover, .step:hover { transform: translateY(-3px); border-color: #cfddc9; box-shadow: 0 12px 25px rgba(27,59,45,.08); }
+    html.motion-ready .reveal { opacity: 0; transform: translateY(20px); }
+    html.motion-ready .reveal.is-visible { opacity: 1; transform: translateY(0); animation: reveal-in .65s cubic-bezier(.2,.7,.2,1) both; }
+    html.motion-ready .reveal-delay-1 { animation-delay: .08s; }
+    html.motion-ready .reveal-delay-2 { animation-delay: .16s; }
+    html.motion-ready .reveal-delay-3 { animation-delay: .24s; }
+    @keyframes slow-drift { to { transform: translate(-12px, 18px) scale(1.04); } }
+    @keyframes note-float { 50% { transform: translateY(-7px); } }
+    @keyframes product-float { 50% { transform: translateY(-5px); } }
+    @keyframes reveal-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      html.motion-ready .reveal { opacity: 1; transform: none; animation: none !important; }
+    }
+    @container (max-width: 900px) {
+      .nav-links { display: none; }
+      .hero-grid { gap: 24px; }
+      .hero-art { min-height: 360px; }
+      .symptoms, .support-grid { grid-template-columns: repeat(2, 1fr); }
+      .ingredients { grid-template-columns: repeat(2, 1fr); }
+    }
+    @container (max-width: 650px) {
+      .container { width: min(100% - 30px, 520px); }
+      .nav { min-height: 64px; }
+      .nav .button { padding: 9px 14px; font-size: .8rem; }
+      .hero { padding: 0 0 12px; }
+      .hero-grid, .two-col { grid-template-columns: 1fr; }
+      .hero-grid { gap: 8px; }
+      .hero-copy { font-size: 1rem; }
+      .check-grid { gap: 9px; font-size: .85rem; }
+      .hero-art { min-height: 300px; margin-top: 12px; }
+      .art-orbit { width: 100%; aspect-ratio: auto; border-radius: 0; background: transparent; }
+      .art-orbit::before, .art-orbit::after { display: none; }
+      .hero-photo-wrap { height: 300px; }
+      .hero-product-badge { width: 83px; height: 83px; }
+      .product-card { transform: scale(.88) rotate(-4deg); }
+      .note-one { top: 25px; right: 0; } .note-two { bottom: 15px; left: 0; }
+      .section { padding: 28px 0; }
+      .section-head { margin-bottom: 16px; }
+      .symptoms { grid-template-columns: 1fr 1fr; gap: 9px; }
+      .symptom { padding: 14px; font-size: .84rem; }
+      .two-col { gap: 18px; }
+      .benefit-list { gap: 8px; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .offer { grid-template-columns: 1fr; padding: 28px 24px; }
+      .offer .button { justify-self: start; }
+      .order-card { grid-template-columns: 1fr; }
+      .order-aside { padding: 25px; }
+      .order-aside ul { display: grid; grid-template-columns: 1fr 1fr; gap: 3px 10px; }
+      .order-form { padding: 25px; }
+      .mobile-cta { display: block; position: fixed; z-index: 30; bottom: 0; left: 50%; width: min(100%, 450px); transform: translateX(-50%); padding: 10px 15px calc(10px + env(safe-area-inset-bottom)); background: rgba(255,255,255,.96); border-top: 1px solid var(--line); }
+      .mobile-cta .button { width: 100%; padding: 12px; }
+      body.order-visible .mobile-cta { display: none; }
+      footer { padding-bottom: 82px; }
+      .disclaimer { padding-bottom: 82px; }
+    }
+    @container (max-width: 390px) {
+      .symptoms, .support-grid { grid-template-columns: 1fr; }
+      #wellness-support .support-item:last-child { grid-column: auto; display: block; }
+      #wellness-support .support-item:last-child .support-photo { height: 92px; margin-bottom: 12px; }
+      .ingredients { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .steps { grid-template-columns: 1fr; }
+      .check-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+ 
+  <div class="nav-wrap">
+    <nav class="nav container" aria-label="मुख्य navigation">
+      <span class="brand-name">GathHeal</span>
+      <div class="nav-links">
+        <a href="#about">हमारे बारे में</a>
+        <a href="#ingredients">Ingredients</a>
+        <a href="#how-to-use">कैसे लें</a>
+        <a href="#faq">FAQs</a>
+      </div>
+      <a class="button button-small" href="#order">अभी जानकारी लें <span aria-hidden="true">→</span></a>
+    </nav>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-banner">
+          <img src="images/gathheal-problem-banner.png" alt="शरीर पर बनी गांठ की चिंता, आकार, भारीपन, दर्द और असहजता से जुड़ा GathHeal awareness banner" fetchpriority="high">
+        </div>
+       
+      </div>
+    </section>
+    
+
+    <section class="section" id="concerns">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">समझें और सही कदम उठाएं</span>
+          <h2>गांठ के साथ ये परेशानियाँ महसूस हो सकती हैं</h2>
+         
+          
+        </div>
+        <div class="problem-visuals" aria-label="गांठ से जुड़े संभावित लक्षणों के illustrative चित्र">
+          <figure class="problem-visual"><img src="images/lump-symptom-bump.jpg" alt="त्वचा के नीचे उभार का illustrative close-up" loading="lazy"><figcaption>दिखाई देने वाला उभार</figcaption></figure>
+          <figure class="problem-visual"><img src="images/lump-symptom-heaviness.jpg" alt="छाती में भारीपन का illustrative चित्र" loading="lazy"><figcaption>भारीपन या दबाव</figcaption></figure>
+          <figure class="problem-visual"><img src="images/lump-symptom-pain.jpg" alt="दर्द के स्थान को हाथ से दर्शाता illustrative चित्र" loading="lazy"><figcaption>दर्द या संवेदनशीलता</figcaption></figure>
+          <figure class="problem-visual"><img src="images/lump-symptom-discomfort.jpg" alt="शरीर की असहजता दर्शाता illustrative चित्र" loading="lazy"><figcaption>असहजता या परेशानी</figcaption></figure>
+        </div>
+       
+      
+        
+      </div>
+    </section>
+
+    <section class="section section-soft" id="about">
+      <div class="container two-col">
+        <div>
+          <span class="eyebrow">GathHeal Capsules</span>
+          <h2>आपकी daily wellness routine के लिए herbal support</h2>
+          
+          <div class="section-visual">
+            <img src="images/gathheal-product.jpeg" alt="GathHeal capsules का पैक" loading="lazy">
+            
+          </div>
+          <div class="benefit-list">
+            <div class="benefit"><span class="check">✓</span>Overall body wellness</div>
+            <div class="benefit"><span class="check">✓</span>Healthy tissue support</div>
+            <div class="benefit"><span class="check">✓</span>Daily herbal care</div>
+            <div class="benefit"><span class="check">✓</span>Guided lifestyle routine</div>
+          </div>
+          <a class="button" href="#order">अपनी routine के बारे में पूछें <span aria-hidden="true">→</span></a>
+        </div>
+        <div>
+          <div class="support-grid" style="grid-template-columns:1fr 1fr">
+            <div class="support-item"><span>🌿</span><strong>Herbal routine</strong><p>Traditional herbs के साथ आसान capsule format.</p></div>
+            <div class="support-item"><span>🧭</span><strong>Lifestyle guidance</strong><p>Daily wellness routine को बेहतर समझने में सहायता.</p></div>
+            <div class="support-item"><span>📋</span><strong>Regular follow-up</strong><p>आपकी routine और progress पर बातचीत.</p></div>
+            <div class="support-item"><span>🤝</span><strong>Customer support</strong><p>Product और usage से जुड़े सवालों के लिए सहायता.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="wellness-support">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Daily wellness approach</span>
+          <h2>आपकी routine के लिए supportive guidance</h2>
+        
+        </div>
+        <div class="section-visual">
+          <img src="images/wellness-journal.jpeg" alt="व्यक्ति अपनी daily routine notebook में लिखता हुआ" loading="lazy">
+          <div><strong>छोटे, नियमित कदम</strong><p>Product label, balanced lifestyle और healthcare professional की सलाह को प्राथमिकता दें।</p></div>
+        </div>
+        <div class="support-grid">
+          <div class="support-item"><img class="support-photo" src="images/gathheal-product.jpeg" alt="GathHeal product label" loading="lazy"><strong>Herbal routine</strong><p>Label के निर्देशानुसार daily routine में शामिल करें।</p></div>
+          <div class="support-item"><img class="support-photo" src="images/wellness-journal.jpeg" alt="Wellness routine लिखता व्यक्ति" loading="lazy"><strong>Lifestyle care</strong><p>Balanced diet और स्वस्थ आदतों पर ध्यान दें।</p></div>
+          <div class="support-item"><img class="support-photo" src="images/practitioner-consultation.jpeg" alt="Healthcare professional patient को सुनता हुआ" loading="lazy"><strong>Medical guidance</strong><p>गांठ के कारण की जांच healthcare professional से करवाएं।</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ingredients">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Ayurveda-inspired formulation</span>
+          <h2>GathHeal के चुनिंदा herbal ingredients</h2>
+         
+        </div>
+        <div class="ingredients">
+          <article class="ingredient"><div class="ingredient-art"><img src="images/kalmegh.avif" alt="Kalmegh plant" loading="lazy"></div><div class="ingredient-copy"><h3>Kalmegh</h3><p>Traditional Ayurvedic wellness routines में उपयोग की जाने वाली herb.</p></div></article>
+          <article class="ingredient"><div class="ingredient-art"><img src="images/chirchita.jpg" alt="Chirchita plant" loading="lazy"></div><div class="ingredient-copy"><h3>Chirchita</h3><p>Traditional herbal preparations में उपयोग किया जाने वाला botanical ingredient.</p></div></article>
+          <article class="ingredient"><div class="ingredient-art"><img src="images/pashanbhed.jpg" alt="Pashanbhed plant" loading="lazy"></div><div class="ingredient-copy"><h3>Pashanbhed</h3><p>Traditional herbal formulations में उपयोग की जाने वाली herb.</p></div></article>
+          <article class="ingredient"><div class="ingredient-art"><img class="plant-crop" src="images/makoi-leaf.jpg" alt="Makoi plant" loading="lazy"></div><div class="ingredient-copy"><h3>Makoi Leaf</h3><p>Ayurvedic wellness practices में उपयोग किया जाने वाला natural ingredient.</p></div></article>
+        </div>
+        <div class="section-head" style="margin:28px auto 0"><strong>4 Herbs. 1 Simple Routine.</strong><p>Kalmegh + Chirchita + Pashanbhed + Makoi Leaf</p></div>
+       
+      </div>
+    </section>
+
+    <section class="section section-soft" id="how-to-use">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Simple daily routine</span>
+          <h2>GathHeal को routine में कैसे शामिल करें?</h2>
+         
+        </div>
+        <div class="section-visual">
+          <img src="images/gathheal-product.jpeg" alt="GathHeal product pack, label instructions के लिए" loading="lazy">
+          <div><strong>पहले instructions समझें</strong><p>Recommended dosage और usage के लिए product label या qualified practitioner के निर्देश देखें।</p></div>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Product care & support</span>
+          <h2>आपकी health, हमारी quality priority</h2>
+          <p>खरीदने से पहले packaging पर दिए गए batch, licence और quality details ज़रूर देखें।</p>
+        </div>
+        <div class="section-visual">
+          <img src="images/gathheal-product.jpeg" alt="GathHeal product packaging" loading="lazy">
+          <div><strong>Pack पर details verify करें</strong><p>Batch, seal, ingredients और applicable licence information को product pack पर जाँचें।</p></div>
+        </div>
+        <div class="support-grid">
+          <div class="support-item"><span>🌱</span><strong>Selected ingredients</strong><p>Product label पर ingredients की पूरी जानकारी देखें।</p></div>
+          <div class="support-item"><span>🧼</span><strong>Hygienic process</strong><p>Manufacturing और storage details pack पर उपलब्ध होंगी।</p></div>
+          <div class="support-item"><span>📦</span><strong>Secure packaging</strong><p>प्राप्ति पर seal और batch details जाँचें।</p></div>
+          <div class="support-item"><span>☎️</span><strong>Customer assistance</strong><p>Product-related सवालों के लिए हमारी team से पूछें।</p></div>
+        </div>
+        <p style="text-align:center;color:var(--muted);font-size:.82rem;margin:20px 0 0">GMP, ISO, quality testing और applicable licences के दावे केवल सत्यापित product documentation उपलब्ध होने पर ही प्रकाशित करें।</p>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="offer">
+          <img class="offer-image" src="images/gathheal-product.jpeg" alt="GathHeal product bottle" loading="lazy">
+          <div><span class="offer-tag">SPECIAL INTRODUCTORY OFFER</span><h2>आज शुरू करें अपनी wellness routine</h2><p>Herbal wellness support · Diet guidance · Regular follow-up · Customer assistance</p></div>
+          <a class="button" href="#order">10% OFF — जानकारी लें <span aria-hidden="true">→</span></a>
+        
+    </section>
+
+    <section class="section form-section" id="order">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Order enquiry</span>
+          <h2>GathHeal के बारे में जानकारी लें</h2>
+          <p>अपनी जानकारी भरें—हमारी team आपसे संपर्क करेगी।</p>
+        </div>
+        <div class="order-card">
+          <aside class="order-aside">
+            <h3>आपकी wellness journey में साथ</h3>
+            <p>Product, routine और availability से जुड़े सवालों के लिए enquiry भेजें।</p>
+            <img class="order-image" src="images/gathheal-product.jpeg" alt="GathHeal capsules का product pack" loading="lazy">
+            <ul>
+              <li>✓ Selected <span>herbs</span></li>
+              <li>✓ Easy capsule format</li>
+              <li>✓ Lifestyle guidance</li>
+              <li>✓ Customer support</li>
+            </ul>
+          </aside>
+          <form class="order-form" id="order-form">
+            <h3>अपनी जानकारी दें</h3>
+            <p>सभी fields भरना आवश्यक है।</p>
+            <div class="field">
+              <label for="customer-name">नाम</label>
+              <input id="customer-name" name="name" type="text" placeholder="अपना नाम दर्ज करें" autocomplete="name" required minlength="2" title="नाम में केवल अक्षर और spaces दर्ज करें">
+            </div>
+            <div class="field">
+              <label for="customer-phone">मोबाइल नंबर</label>
+              <input id="customer-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="10 अंकों का मोबाइल नंबर" pattern="[6-9][0-9]{9}" maxlength="10" title="कृपया 6, 7, 8 या 9 से शुरू होने वाला 10 अंकों का नंबर दर्ज करें" required>
+            </div>
+            <button class="button" type="submit">GET GATHHEAL NOW <span aria-hidden="true">→</span></button>
+          
+            
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head"><span class="eyebrow">आपके सवाल</span><h2>अक्सर पूछे जाने वाले सवाल</h2></div>
+       
+        <div class="faq">
+          <details><summary>GathHeal Capsules क्या हैं?</summary><p>GathHeal एक Ayurvedic herbal formulation है, जिसमें traditional herbs का संयोजन शामिल है। यह supportive wellness product है, किसी बीमारी का इलाज नहीं।</p></details>
+          <details><summary>GathHeal में कौन-कौन से ingredients हैं?</summary><p>Kalmegh, Chirchita, Pashanbhed और Makoi Leaf. खरीदने से पहले पैक पर दी गई पूरी ingredient list पढ़ें।</p></details>
+          <details><summary>क्या GathHeal सभी प्रकार की गांठ के लिए है?</summary><p>नहीं। हर गांठ का कारण अलग हो सकता है। Proper medical evaluation ज़रूरी है; GathHeal medical diagnosis या treatment का विकल्प नहीं है।</p></details>
+          <details><summary>GathHeal कैसे लेना चाहिए?</summary><p>Product label या qualified practitioner द्वारा बताए गए निर्देशों के अनुसार ही लें।</p></details>
+          <details><summary>क्या COD उपलब्ध है?</summary><p>COD selected locations पर उपलब्ध हो सकती है। Order enquiry के बाद हमारी team availability confirm करेगी।</p></details>
+          <details><summary>गांठ होने पर डॉक्टर को दिखाना चाहिए?</summary><p>हाँ, किसी भी नई गांठ के लिए healthcare professional से सलाह लेना उचित है। अगर गांठ तेजी से बढ़ रही हो, दर्दनाक या कठोर हो, या बनी हुई हो तो जल्द जांच करवाएं।</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="disclaimer" id="legal-disclaimer" aria-labelledby="disclaimer-title">
+    <div class="container disclaimer-inner">
+      <h2 id="disclaimer-title">Disclaimer</h2>
+      <p><strong>Disclaimer:</strong> GathHeal किसी गांठ की diagnosis, emergency treatment या guaranteed cure का replacement नहीं है। गांठ का कारण अलग-अलग हो सकता है और किसी नई, तेजी से बढ़ने वाली, कठोर, दर्दनाक या unexplained गांठ के लिए qualified healthcare professional से medical evaluation करवाना जरूरी है। यह landing page herbal wellness support की जानकारी के लिए है। Individual results may vary.</p>
+      <nav class="policy-links" aria-label="Policies and contact">
+        <a href="#policy-detail" data-policy-link data-policy="privacy-policy" aria-expanded="false" aria-controls="policy-detail">Privacy</a>
+        <a href="#policy-detail" data-policy-link data-policy="terms-policy" aria-expanded="false" aria-controls="policy-detail">Terms</a>
+        <a href="#policy-detail" data-policy-link data-policy="shipping-policy" aria-expanded="false" aria-controls="policy-detail">Shipping</a>
+        <a href="#policy-detail" data-policy-link data-policy="cancellation-policy" aria-expanded="false" aria-controls="policy-detail">Cancellation</a>
+        <a href="#order">Contact</a>
+        <a href="#legal-disclaimer">Legal Disclaimer</a>
+      </nav>
+      <section class="policy-detail" id="policy-detail" aria-live="polite" hidden>
+        <h3 id="policy-detail-title"></h3>
+        <p id="policy-detail-text"></p>
+      </section>
+    </div>
+  </footer>
+  
+  <div class="mobile-cta"><a class="button" href="#order">10% OFF — जानकारी लें <span aria-hidden="true">→</span></a></div>
+  <script>
+    const year = document.getElementById("year");
+    if (year) year.textContent = new Date().getFullYear();
+
+    const policyContent = {
+      "privacy-policy": {
+        title: "Privacy Policy",
+        text: "यह landing page का order form demo है। इसमें दी गई जानकारी किसी server या CRM पर submit या store नहीं होती।"
+      },
+      "terms-policy": {
+        title: "Terms",
+        text: "GathHeal herbal wellness support के लिए है; यह diagnosis, emergency treatment या medical care का विकल्प नहीं है। Product label और qualified healthcare professional की सलाह का पालन करें।"
+      },
+      "shipping-policy": {
+        title: "Shipping Policy",
+        text: "COD selected locations पर उपलब्ध हो सकती है। Availability और delivery details order से पहले confirm करें।"
+      },
+      "cancellation-policy": {
+        title: "Cancellation Policy",
+        text: "इस landing page पर cancellation, return या refund की शर्तें उपलब्ध नहीं हैं। Order देने से पहले seller से लागू शर्तें confirm करें।"
+      }
+    };
+    const policyDetail = document.getElementById("policy-detail");
+    const policyDetailTitle = document.getElementById("policy-detail-title");
+    const policyDetailText = document.getElementById("policy-detail-text");
+    document.querySelectorAll("[data-policy-link]").forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        const policy = policyContent[this.dataset.policy];
+        if (!policy) return;
+        const isOpen = !policyDetail.hidden && policyDetailTitle.textContent === policy.title;
+        document.querySelectorAll("[data-policy-link]").forEach(function (policyLink) {
+          policyLink.setAttribute("aria-expanded", "false");
+        });
+        policyDetail.hidden = isOpen;
+        if (!isOpen) {
+          policyDetailTitle.textContent = policy.title;
+          policyDetailText.textContent = policy.text;
+          this.setAttribute("aria-expanded", "true");
+        }
+      });
+    });
+
+    const orderForm = document.getElementById("order-form");
+    const customerName = document.getElementById("customer-name");
+    const customerPhone = document.getElementById("customer-phone");
+
+    customerName.addEventListener("input", function () {
+      this.value = this.value.replace(/[^\p{L}\s]/gu, "").replace(/\s+/g, " ").trimStart();
+      this.setCustomValidity(this.value.trim().replace(/\s/g, "").length < 2 && this.value.length > 0
+        ? "कृपया नाम में कम से कम 2 अक्षर दर्ज करें।"
+        : "");
+    });
+    customerPhone.addEventListener("input", function () {
+      this.value = this.value.replace(/\D/g, "").slice(0, 10);
+    });
+
+    orderForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      if (!this.reportValidity()) return;
+      window.location.assign(new URL("thank.html", window.location.href).href);
+    });
+
+    const orderSection = document.getElementById("order");
+    new IntersectionObserver(function (entries) {
+      document.body.classList.toggle("order-visible", entries[0].isIntersecting);
+    }, { threshold: 0.15 }).observe(orderSection);
+
+    if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.documentElement.classList.add("motion-ready");
+      const revealObserver = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll(".section-head, .problem-visual, .symptom, .section-visual, .ingredient, .step, .support-item, .offer, .order-card, .faq details, .disclaimer-inner").forEach(function (element, index) {
+        element.classList.add("reveal", "reveal-delay-" + (index % 4));
+        revealObserver.observe(element);
+      });
+    }
+  </script>
+</body>
+</html>
