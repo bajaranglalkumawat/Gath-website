@@ -251,7 +251,7 @@ h2 {
 }
 
 h3 {
-  font-size: 18px; 
+  font-size: 20px; 
    text-align: center;
 }
 
@@ -493,14 +493,14 @@ h3 {
 }
 
 .section-head h2 {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.25;
   letter-spacing: -.04em;
   margin: 10px 0;
 }
 
 .section-head p {
-  color: var(--muted);
+  
   margin-bottom: 0; 
   color: black;
 
@@ -642,7 +642,7 @@ h3 {
 }
 
 .two-col h2 {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.25;
   letter-spacing: -.045em;
   margin: 14px 0; 
