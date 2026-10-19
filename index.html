@@ -309,7 +309,7 @@
     </div>
   </footer>
   
-  <div class="mobile-cta"><a class="button" href="#order">10% OFF — जानकारी लें <span aria-hidden="true">→</span></a></div>
+  <div class="scroll-cta"><a class="button" href="#order">10% OFF — जानकारी लें <span aria-hidden="true">→</span></a></div>
   <script>
     const year = document.getElementById("year");
     if (year) year.textContent = new Date().getFullYear();
@@ -373,10 +373,11 @@
       window.location.assign(new URL("thank.html", window.location.href).href);
     });
 
-    const orderSection = document.getElementById("order");
-    new IntersectionObserver(function (entries) {
-      document.body.classList.toggle("order-visible", entries[0].isIntersecting);
-    }, { threshold: 0.15 }).observe(orderSection);
+    function updateScrollCta() {
+      document.body.classList.toggle("has-scrolled", window.scrollY > 180);
+    }
+    window.addEventListener("scroll", updateScrollCta, { passive: true });
+    updateScrollCta();
 
     if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       document.documentElement.classList.add("motion-ready");
