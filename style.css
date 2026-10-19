@@ -1078,8 +1078,8 @@ html.motion-ready .quality-trust-card:nth-child(4).reveal.is-visible { animation
 }
 
 .ingredient-copy {
-  min-height: 152px;
-  padding: 27px 12px 16px;
+  min-height: 0;
+  padding: 22px 12px 12px;
 }
 
 .ingredient h3 {
@@ -2822,8 +2822,8 @@ body.order-form-active .scroll-cta {
     max-width: 100%;
     height: auto;
     aspect-ratio: 1 / 1;
-    min-height: 132px;
-    flex: 1 1 auto;
+    min-height: 0;
+    flex: 0 0 auto;
     margin: 0 0 10px;
     border-radius: 10px;
     object-fit: cover;
