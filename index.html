@@ -96,7 +96,9 @@
     <section class="section" id="about">
       <div class="container">
         <h2 class="about-intro-heading">GathHeal Capsules चुनिंदा traditional Ayurvedic herbs से तैयार किया गया herbal formulation है।</h2>
-        <img class="about-support-infographic" src="images/gathheal-wellness-hero.png" alt="GathHeal Capsules के साथ Ayurvedic wellness support, herbs, lifestyle routine और monitoring" width="752" height="1024" loading="lazy" decoding="async">
+        <div class="about-infographic-frame">
+          <img class="about-support-infographic" src="images/gathheal-wellness-hero.png" alt="GathHeal Capsules के साथ Ayurvedic wellness support, herbs, lifestyle routine और monitoring" width="752" height="1024" loading="lazy" decoding="async">
+        </div>
         
       </div>
     </section>
@@ -169,7 +171,7 @@
         <div class="offer">
           <img class="offer-image" src="images/gathheal-product.jpeg" alt="GathHeal product bottle" loading="lazy">
           <div><span class="offer-tag">SAVE 10% TODAY</span><h2>GathHeal के साथ आपको मिलता है</h2><p>10% Special Discount · Cash on Delivery · Herbal wellness support · Diet guidance · Regular follow-up · Customer assistance</p><p>Pan-India Delivery | COD Available | Secure Order</p></div>
-          <a class="button" href="#order">10% OFF — जानकारी लें <span aria-hidden="true">→</span></a>
+        
         </div>
       </div>
     </section>
@@ -313,6 +315,10 @@
     const orderForm = document.getElementById("order-form");
     const customerName = document.getElementById("customer-name");
     const customerPhone = document.getElementById("customer-phone");
+
+    orderForm.addEventListener("focusin", function () {
+      document.body.classList.add("order-form-active");
+    });
 
     customerName.addEventListener("input", function () {
       this.value = this.value.replace(/[^\p{L}\s]/gu, "").replace(/\s+/g, " ").trimStart();

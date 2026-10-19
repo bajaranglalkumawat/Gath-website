@@ -828,6 +828,11 @@ h3 {
   border-radius: 16px;
 }
 
+.about-infographic-frame {
+  padding-bottom: 20px;
+  background: #16452f;
+}
+
 .about-restored-copy {
   max-width: 450px;
   margin: 18px auto 0;
@@ -1700,8 +1705,10 @@ details p {
 }
 
 .disclaimer {
-  width: 100vw;
-  margin-inline: calc(50% - 50vw);
+  width: 100%;
+  margin-inline: 0;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
   background: #faf8ef;
   border: 1px solid #eeeade;
   padding: 38px 0 14px;
@@ -2474,6 +2481,13 @@ body.in-disclaimer .scroll-cta {
   transform: translateY(18px);
 }
 
+body.order-form-active .scroll-cta {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(18px);
+}
+
 #quality-trust {
   padding: 0;
   background: transparent;
@@ -2825,8 +2839,7 @@ body.in-disclaimer .scroll-cta {
 
   .container,
   #concerns > .container,
-  #quality-trust > .container,
-  .hero > .container {
+  #quality-trust > .container {
     width: calc(100% - 32px);
     max-width: 450px;
     margin-inline: auto;
