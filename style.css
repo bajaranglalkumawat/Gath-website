@@ -924,12 +924,13 @@ h3 {
 
 .quality-trust-card img {
   display: block;
-  width: min(100%, 112px);
-  height: 96px;
-  padding: 4px;
+  flex: 0 0 112px;
+  width: 112px;
+  height: 112px;
+  padding: 0;
   border-radius: 12px;
   background: #fff;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .quality-trust-card strong {
@@ -1429,7 +1430,7 @@ html.motion-ready .quality-trust-card:nth-child(4).reveal.is-visible { animation
 }
 
 .order-form h3 {
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 5px;
 }
 
@@ -1445,7 +1446,7 @@ html.motion-ready .quality-trust-card:nth-child(4).reveal.is-visible { animation
 .field label {
   display: block;
   font-weight: 700;
-  font-size: .9rem;
+  font-size: 20px;
   margin-bottom: 7px;
 }
 
@@ -1469,7 +1470,7 @@ html.motion-ready .quality-trust-card:nth-child(4).reveal.is-visible { animation
 .form-small {
   text-align: center;
   color: var(--muted);
-  font-size: .75rem;
+  font-size:15px;
   margin: 12px 0 0 !important;
 }
 
@@ -2232,11 +2233,14 @@ html.motion-ready .reveal-delay-3 {
 .quality-trust-card img {
   width: 96px;
   height: 96px;
-  object-fit: contain;
+  object-fit: cover;
 }
 
-.quality-trust-card:nth-child(1) img { transform: scale(1.55); }
-.quality-trust-card:nth-child(4) img { transform: scale(1.12); }
+/* Keep every certification badge the same visible size and inside its card. */
+.quality-trust-card:nth-child(1) img,
+.quality-trust-card:nth-child(4) img {
+  transform: none;
+}
 
 .scroll-cta {
   right: 12px;
@@ -2631,9 +2635,19 @@ body.in-disclaimer .scroll-cta {
   }
 
   .quality-trust-card img {
+    flex: 0 0 112px;
     width: 112px;
+    min-width: 0;
     max-width: 100%;
     height: 112px;
+    padding: 0;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  .quality-trust-card:nth-child(1) img,
+  .quality-trust-card:nth-child(4) img {
+    transform: none;
   }
 
   .quality-trust-card strong {
