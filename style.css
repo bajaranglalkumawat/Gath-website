@@ -829,8 +829,8 @@ h3 {
 }
 
 .about-infographic-frame {
-  padding-bottom: 20px;
-  background: #16452f;
+  padding-bottom: 0;
+  background: transparent;
 }
 
 .about-restored-copy {
@@ -856,13 +856,23 @@ h3 {
   gap: 8px 14px;
   margin: 0 0 14px;
   padding: 0 8px;
-  list-style-position: inside;
+  list-style: none;
 }
 
 .about-keypoints li {
   min-width: 0;
   overflow-wrap: anywhere;
+  padding: 10px 8px;
+  border: 1px solid #d9e7cc;
+  border-radius: 12px;
+  background: #f0f5e8;
   line-height: 1.4;
+}
+
+.about-restored-copy > p {
+  margin: 0;
+  color: var(--green-dark);
+  font-weight: 700;
 }
 
 .about-restored-copy > p {
