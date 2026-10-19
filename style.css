@@ -806,6 +806,14 @@ h3 {
   grid-template-columns: 1fr 1fr;
 }
 
+.about-support-infographic {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 16px;
+}
+
 .two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2180,6 +2188,40 @@ html.motion-ready .reveal-delay-3 {
   }
 }
 
+/* Mobile image and loading performance refinements. */
+.quality-trust-card img {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+}
+
+.quality-trust-card:nth-child(1) img { transform: scale(1.55); }
+.quality-trust-card:nth-child(4) img { transform: scale(1.12); }
+
+.scroll-cta {
+  right: 12px;
+  bottom: max(12px, env(safe-area-inset-bottom));
+  left: 12px;
+  width: auto;
+  max-width: 426px;
+}
+
+/* Let the Lifestyle care photo fill the card width without side gaps. */
+#wellness-support .support-item:first-child {
+  overflow: hidden;
+}
+
+#wellness-support .support-item:first-child .support-photo {
+  width: calc(100% + 40px);
+  max-width: none;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  margin: -20px -20px 12px;
+  border-radius: 0;
+  object-fit: cover;
+  object-position: center;
+}
+
 /* Cohesive Ayurvedic palette overrides for later component rules. */
 .symptom { background: #f6f5ec; }
 .concern-roadmap { scrollbar-color: #8a9b72 #e8eadf; }
@@ -2199,3 +2241,76 @@ html.motion-ready .reveal-delay-3 {
 .problem-visual, .symptom, .section-visual, .ingredient, .step,
 .support-item, .offer, .order-card, .order-intro, .faq details,
 .notice, .policy-detail { outline: none; animation: none; }
+
+/* Consistent readable type sizes across the landing page. */
+h1, h2, h3 {
+  font-size: 24px !important;
+}
+
+p,
+li,
+strong,
+.check-item,
+.symptom,
+.benefit,
+.ingredient-copy,
+.support-item,
+.quality-trust-card,
+.trust-row,
+.offer-tag {
+  font-size: 20px !important;
+}
+
+/* Center text consistently throughout the page. */
+body,
+body * {
+  text-align: center !important;
+}
+
+.product-care-infographic {
+  display: block;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 16px;
+}
+
+/* Use the full mobile canvas for sections and their main images. */
+@container (max-width: 650px) {
+  .container,
+  #concerns > .container,
+  #quality-trust > .container {
+    width: 100%;
+    max-width: none;
+  }
+
+  .section-head {
+    padding-inline: 14px;
+  }
+
+  .section-visual {
+    margin-inline: 0;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 0;
+  }
+
+  .section-visual img {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    object-fit: cover;
+  }
+
+  .section-visual > div {
+    padding: 14px;
+  }
+
+  .about-support-infographic,
+  .product-care-infographic {
+    width: 100%;
+    max-width: none;
+    border-radius: 0;
+  }
+}
