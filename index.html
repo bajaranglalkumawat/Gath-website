@@ -269,7 +269,7 @@
   <footer class="disclaimer" id="legal-disclaimer" aria-labelledby="disclaimer-title">
     <div class="container disclaimer-inner">
       <h2 id="disclaimer-title">Disclaimer</h2>
-      <p><strong>Disclaimer:</strong> GathHeal किसी गांठ की diagnosis, emergency treatment या guaranteed cure का replacement नहीं है। गांठ का कारण अलग-अलग हो सकता है और किसी नई, तेजी से बढ़ने वाली, कठोर, दर्दनाक या unexplained गांठ के लिए qualified healthcare professional से medical evaluation करवाना जरूरी है। यह landing page herbal wellness support की जानकारी के लिए है। Individual results may vary.</p>
+      <p><strong>Disclaimer:</strong> GathHeal आपकी wellness routine का हिस्सा है। गांठ से जुड़ी सही जानकारी और उचित देखभाल के लिए qualified healthcare professional की सलाह लेना हमेशा बेहतर रहता है। हर गांठ का कारण अलग हो सकता है, इसलिए किसी नई, तेजी से बढ़ने वाली, कठोर, दर्दनाक या unexplained गांठ के मामले में समय पर medical evaluation करवाएं।.</p>
       <nav class="policy-links" aria-label="Policies and contact">
         <a href="#policy-detail" data-policy-link data-policy="privacy-policy" aria-expanded="false" aria-controls="policy-detail">Privacy</a>
         <a href="#policy-detail" data-policy-link data-policy="terms-policy" aria-expanded="false" aria-controls="policy-detail">Terms</a>
@@ -350,7 +350,10 @@
     });
 
     function updateScrollCta() {
+      const disclaimer = document.getElementById("legal-disclaimer");
+      const disclaimerVisible = disclaimer && disclaimer.getBoundingClientRect().top < window.innerHeight;
       document.body.classList.toggle("has-scrolled", window.scrollY > 180);
+      document.body.classList.toggle("in-disclaimer", Boolean(disclaimerVisible));
     }
     window.addEventListener("scroll", updateScrollCta, { passive: true });
     updateScrollCta();
