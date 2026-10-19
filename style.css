@@ -1,17 +1,37 @@
 /* ===== Global styles ===== */
 :root {
-  --ink: #19392a;
-  --muted: #607262;
-  --green: #38734d;
-  --green-dark: #183e2c;
-  --lime: #e7edc8;
-  --cream: #f5f3e7;
-  --white: #fffdf6;
-  --line: #dfe5d6;
-  --orange: #bd823b;
+  --ink: #263b2d;
+  --muted: #687767;
+  --green: #547653;
+  --green-dark: #294a36;
+  --lime: #e4ebd2;
+  --cream: #f3f1e6;
+  --white: #fffdf8;
+  --line: #dfe4d7;
+  --orange: #a9824d;
   --shadow: 0 20px 55px rgba(30, 65, 43, .12);
   --radius: 24px;
 }
+
+/* Keep accents within a calm herbal palette. */
+.symptom { background: #f6f5ec; }
+.concern-roadmap { scrollbar-color: #8a9b72 #e8eadf; }
+.concern-road { stroke: #71865f; filter: drop-shadow(0 4px 2px rgba(41, 74, 54, .18)); }
+.concern-road-center { stroke: #f3f1e6; }
+.concern-road-markers circle,
+.concern-road-markers g:nth-child(n + 4) circle { fill: #a9824d; }
+.concern-card.problem-visual,
+.concern-card:nth-child(n + 4) { background: #547653; box-shadow: 0 3px 0 #294a36, 0 6px 12px rgba(41, 74, 54, .16); }
+.concern-card.problem-visual { border-color: #dfe4d7; }
+.notice { background: #f5f1e4; border-color: #e7dcc3; color: #66583f; }
+#ingredients { background: #eef1e5; }
+#quality-trust { background: linear-gradient(120deg, #294a36, #3f6547 55%, #547653); }
+.testimonial-priya { --testimonial-color: #547653; }
+.testimonial-suresh { --testimonial-color: #788362; }
+.disclaimer { background: #f5f3e9; border-color: #e8e5d9; }
+.problem-visual, .symptom, .section-visual, .ingredient, .step,
+.support-item, .offer, .order-card, .order-intro, .faq details,
+.notice, .policy-detail { outline: none; animation: none; }
 
 * {
   box-sizing: border-box;
@@ -23,7 +43,7 @@ html {
 
 body {
   width: 100%;
-  max-width: 600px;
+  max-width: 450px;
   min-height: 100vh;
   margin: 0 auto;
   container-type: inline-size;
@@ -1448,7 +1468,7 @@ html.motion-ready .quality-trust-card:nth-child(4).reveal.is-visible { animation
 /* ===== Customer testimonials ===== */
 .testimonials-section {
   padding-top: 0;
-  background: #f2f4f1;
+  background: var(--cream);
 }
 
 .testimonials-heading {
@@ -1456,13 +1476,13 @@ html.motion-ready .quality-trust-card:nth-child(4).reveal.is-visible { animation
   margin: 0 calc(50% - 50vw) 24px;
   padding: 16px 15px 18px;
   color: #fff;
-  background: #163c50;
+  background: var(--green-dark);
   text-align: center;
 }
 
 .testimonials-heading > span {
   display: block;
-  color: #d1e0e4;
+  color: var(--lime);
   font-size: .64rem;
   font-weight: 750;
   letter-spacing: .16em;
@@ -1482,7 +1502,7 @@ html.motion-ready .quality-trust-card:nth-child(4).reveal.is-visible { animation
 }
 
 .testimonial-row {
-  --testimonial-color: #16426c;
+  --testimonial-color: var(--green-dark);
   display: grid;
   grid-template-columns: 132px minmax(0, 1fr);
   align-items: center;
@@ -1490,8 +1510,8 @@ html.motion-ready .quality-trust-card:nth-child(4).reveal.is-visible { animation
   min-height: 118px;
 }
 
-.testimonial-priya { --testimonial-color: #e56a2b; }
-.testimonial-suresh { --testimonial-color: #1688ae; }
+.testimonial-priya { --testimonial-color: #548052; }
+.testimonial-suresh { --testimonial-color: #7c8653; }
 
 .testimonial-person {
   min-height: 92px;
@@ -1502,7 +1522,7 @@ html.motion-ready .quality-trust-card:nth-child(4).reveal.is-visible { animation
   color: #fff;
   background: var(--testimonial-color);
   clip-path: polygon(0 0, 100% 12%, 100% 88%, 0 100%);
-  box-shadow: 0 8px 18px rgba(25, 54, 69, .12);
+  box-shadow: 0 8px 18px rgba(27, 59, 45, .12);
 }
 
 .testimonial-person span {
@@ -1545,10 +1565,10 @@ html.motion-ready .quality-trust-card:nth-child(4).reveal.is-visible { animation
   position: relative;
   margin: 0;
   padding: 14px 15px;
-  border: 1px solid #e0e5e1;
+  border: 1px solid var(--line);
   border-radius: 12px;
-  background: rgba(255, 255, 255, .88);
-  color: #46534f;
+  background: rgba(255, 253, 246, .94);
+  color: var(--ink);
   font-size: .78rem;
   line-height: 1.65;
 }
@@ -1559,7 +1579,7 @@ html.motion-ready .quality-trust-card:nth-child(4).reveal.is-visible { animation
   top: 50%;
   left: -25px;
   width: 24px;
-  border-top: 1px solid #aab7b1;
+  border-top: 1px solid #a2b09f;
 }
 
 .testimonial-quote::after {
@@ -2159,3 +2179,23 @@ html.motion-ready .reveal-delay-3 {
     grid-template-columns: 1fr;
   }
 }
+
+/* Cohesive Ayurvedic palette overrides for later component rules. */
+.symptom { background: #f6f5ec; }
+.concern-roadmap { scrollbar-color: #8a9b72 #e8eadf; }
+.concern-road { stroke: #71865f; filter: drop-shadow(0 4px 2px rgba(41, 74, 54, .18)); }
+.concern-road-center { stroke: #f3f1e6; }
+.concern-road-markers circle,
+.concern-road-markers g:nth-child(n + 4) circle { fill: #a9824d; }
+.concern-card.problem-visual,
+.concern-card:nth-child(n + 4) { background: #547653; box-shadow: 0 3px 0 #294a36, 0 6px 12px rgba(41, 74, 54, .16); }
+.concern-card.problem-visual { border-color: #dfe4d7; }
+.notice { background: #f5f1e4; border-color: #e7dcc3; color: #66583f; }
+#ingredients { background: #eef1e5; }
+#quality-trust { background: linear-gradient(120deg, #294a36, #3f6547 55%, #547653); }
+.testimonial-priya { --testimonial-color: #547653; }
+.testimonial-suresh { --testimonial-color: #788362; }
+.disclaimer { background: #f5f3e9; border-color: #e8e5d9; }
+.problem-visual, .symptom, .section-visual, .ingredient, .step,
+.support-item, .offer, .order-card, .order-intro, .faq details,
+.notice, .policy-detail { outline: none; animation: none; }
